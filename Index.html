@@ -1,42 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>AI Image Generator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free AI Image Generator</title>
 
-  <style>
-    body{
-      background:#111;
-      color:white;
-      font-family:Arial;
-      text-align:center;
-      padding:20px;
-    }
+<style>
 
-    input{
-      width:80%;
-      padding:15px;
-      border:none;
-      border-radius:10px;
-      font-size:18px;
-    }
+body{
+background:#0f0f0f;
+font-family:Arial;
+color:white;
+text-align:center;
+padding:20px;
+}
 
-    button{
-      margin-top:15px;
-      padding:12px 25px;
-      font-size:18px;
-      border:none;
-      border-radius:10px;
-      background:#00ff99;
-      cursor:pointer;
-    }
+h1{
+font-size:35px;
+margin-bottom:20px;
+}
 
-    img{
-      margin-top:20px;
-      width:90%;
-      max-width:500px;
-      border-radius:15px;
-    }
-  </style>
+input{
+width:85%;
+max-width:500px;
+padding:15px;
+border:none;
+border-radius:12px;
+font-size:18px;
+outline:none;
+}
+
+button{
+margin-top:15px;
+padding:14px 30px;
+border:none;
+border-radius:12px;
+font-size:18px;
+background:#00ff99;
+cursor:pointer;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+img{
+margin-top:25px;
+width:90%;
+max-width:550px;
+border-radius:18px;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+</style>
 </head>
 
 <body>
@@ -44,47 +60,34 @@
 <h1>AI Image Generator</h1>
 
 <input
+type="text"
 id="prompt"
-placeholder="Enter image prompt"
+placeholder="Enter your image prompt"
 />
 
 <br>
 
 <button onclick="generateImage()">
-Generate
+Generate Image
 </button>
 
 <br>
 
-<img id="image">
+<img id="image"/>
 
 <script>
 
-async function generateImage(){
+function generateImage(){
 
 const prompt =
 document.getElementById("prompt").value;
 
-const response = await fetch(
-"https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2",
-{
-method:"POST",
-
-headers:{
-"Authorization":"Bearer YOUR_API_KEY",
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify({
-inputs:prompt
-})
-}
-);
-
-const blob = await response.blob();
+const imageUrl =
+"https://image.pollinations.ai/prompt/" +
+encodeURIComponent(prompt);
 
 document.getElementById("image").src =
-URL.createObjectURL(blob);
+imageUrl;
 
 }
 
