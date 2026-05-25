@@ -1,55 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free AI Image Generator</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>AI Image Generator</title>
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
 body{
-background:#0f0f0f;
-font-family:Arial;
+background:
+linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 color:white;
-text-align:center;
-padding:20px;
+min-height:100vh;
+}
+
+/* TOP NAVBAR */
+
+nav{
+width:100%;
+padding:18px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#00ffb3;
+letter-spacing:1px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+margin-left:25px;
+font-size:17px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#00ffb3;
+}
+
+/* MAIN BOX */
+
+.container{
+padding:60px 20px;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.glass-box{
+width:95%;
+max-width:750px;
+padding:40px 25px;
+border-radius:25px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(14px);
+box-shadow:0 0 30px rgba(0,0,0,0.5);
 }
 
 h1{
-font-size:35px;
+font-size:50px;
+margin-bottom:12px;
+}
+
+.subtitle{
+color:#cccccc;
+margin-bottom:35px;
+font-size:18px;
+}
+
+/* INPUT */
+
+input{
+width:100%;
+padding:18px;
+border:none;
+border-radius:15px;
+font-size:18px;
+outline:none;
+background:rgba(255,255,255,0.12);
+color:white;
 margin-bottom:20px;
 }
 
-input{
-width:85%;
-max-width:500px;
-padding:15px;
-border:none;
-border-radius:12px;
-font-size:18px;
-outline:none;
+input::placeholder{
+color:#ddd;
 }
 
+/* BUTTON */
+
 button{
-margin-top:15px;
-padding:14px 30px;
+padding:16px 35px;
 border:none;
-border-radius:12px;
+border-radius:15px;
 font-size:18px;
-background:#00ff99;
+font-weight:bold;
 cursor:pointer;
+background:linear-gradient(45deg,#00ffb3,#00c3ff);
+color:black;
+transition:0.3s;
 }
 
 button:hover{
-opacity:0.9;
+transform:scale(1.05);
+}
+
+/* IMAGE */
+
+.image-box{
+margin-top:35px;
 }
 
 img{
-margin-top:25px;
-width:90%;
-max-width:550px;
-border-radius:18px;
-box-shadow:0 0 20px rgba(0,0,0,0.5);
+width:100%;
+max-width:600px;
+border-radius:20px;
+display:none;
+box-shadow:0 0 25px rgba(0,0,0,0.6);
+}
+
+/* FOOTER */
+
+footer{
+margin-top:60px;
+padding:25px;
+text-align:center;
+background:rgba(0,0,0,0.5);
+font-size:15px;
+color:#bbb;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:700px){
+
+h1{
+font-size:36px;
+}
+
+nav{
+padding:15px 20px;
+}
+
+.nav-links a{
+margin-left:15px;
+font-size:15px;
+}
+
 }
 
 </style>
@@ -57,23 +176,86 @@ box-shadow:0 0 20px rgba(0,0,0,0.5);
 
 <body>
 
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+AI Generator
+</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#terms">Terms</a>
+</div>
+
+</nav>
+
+<!-- MAIN -->
+
+<div class="container">
+
+<div class="glass-box">
+
 <h1>AI Image Generator</h1>
+
+<p class="subtitle">
+Create cinematic AI images instantly for free
+</p>
 
 <input
 type="text"
 id="prompt"
-placeholder="Enter your image prompt"
+placeholder="Enter your cinematic image prompt..."
 />
-
-<br>
 
 <button onclick="generateImage()">
 Generate Image
 </button>
 
-<br>
-
+<div class="image-box">
 <img id="image"/>
+</div>
+
+</div>
+
+</div>
+
+<!-- ABOUT -->
+
+<section id="about" style="padding:60px 20px; text-align:center;">
+
+<h2 style="font-size:35px; margin-bottom:20px;">
+About
+</h2>
+
+<p style="max-width:850px; margin:auto; color:#ccc; line-height:1.8; font-size:18px;">
+This AI Image Generator allows users to create stunning AI-generated images instantly using text prompts. 
+Simply type your idea and generate unique cinematic images for free.
+</p>
+
+</section>
+
+<!-- TERMS -->
+
+<section id="terms" style="padding:60px 20px; text-align:center;">
+
+<h2 style="font-size:35px; margin-bottom:20px;">
+Terms & Conditions
+</h2>
+
+<p style="max-width:850px; margin:auto; color:#ccc; line-height:1.8; font-size:18px;">
+By using this website, you agree not to generate harmful, illegal, or inappropriate content. 
+This service is provided for educational and creative purposes only.
+</p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 AI Image Generator | All Rights Reserved
+</footer>
 
 <script>
 
@@ -82,12 +264,21 @@ function generateImage(){
 const prompt =
 document.getElementById("prompt").value;
 
+if(prompt.trim() === ""){
+alert("Please enter a prompt");
+return;
+}
+
 const imageUrl =
 "https://image.pollinations.ai/prompt/" +
 encodeURIComponent(prompt);
 
-document.getElementById("image").src =
-imageUrl;
+const image =
+document.getElementById("image");
+
+image.style.display = "block";
+
+image.src = imageUrl;
 
 }
 
