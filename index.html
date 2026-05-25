@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
 <title>AI Image Generator</title>
 
 <!-- MONETAG VERIFICATION -->
@@ -28,8 +27,6 @@ background-attachment:fixed;
 color:white;
 min-height:100vh;
 }
-
-/* TOP NAVBAR */
 
 nav{
 width:100%;
@@ -63,8 +60,6 @@ transition:0.3s;
 color:#00ffb3;
 }
 
-/* MAIN BOX */
-
 .container{
 padding:60px 20px;
 display:flex;
@@ -94,8 +89,6 @@ margin-bottom:35px;
 font-size:18px;
 }
 
-/* INPUT */
-
 input{
 width:100%;
 padding:18px;
@@ -111,8 +104,6 @@ margin-bottom:20px;
 input::placeholder{
 color:#ddd;
 }
-
-/* BUTTON */
 
 button{
 padding:16px 35px;
@@ -130,8 +121,6 @@ button:hover{
 transform:scale(1.05);
 }
 
-/* IMAGE */
-
 .image-box{
 margin-top:35px;
 }
@@ -144,16 +133,21 @@ display:none;
 box-shadow:0 0 25px rgba(0,0,0,0.6);
 }
 
-/* AD BOX */
-
 .ad-box{
 margin-top:30px;
 padding:15px;
 background:rgba(255,255,255,0.05);
 border-radius:15px;
+text-align:center;
 }
 
-/* FOOTER */
+.adsterra-side{
+position:fixed;
+right:10px;
+top:50%;
+transform:translateY(-50%);
+z-index:999;
+}
 
 footer{
 margin-top:60px;
@@ -164,23 +158,11 @@ font-size:15px;
 color:#bbb;
 }
 
-/* RESPONSIVE */
-
 @media(max-width:700px){
-
-h1{
-font-size:36px;
-}
-
-nav{
-padding:15px 20px;
-}
-
-.nav-links a{
-margin-left:15px;
-font-size:15px;
-}
-
+h1{ font-size:36px; }
+nav{ padding:15px 20px; }
+.nav-links a{ margin-left:15px; font-size:15px; }
+.adsterra-side{ display:none; }
 }
 
 </style>
@@ -188,120 +170,115 @@ font-size:15px;
 
 <body>
 
-<!-- NAVBAR -->
-
 <nav>
-
-<div class="logo">
-AI Generator
-</div>
-
-<div class="nav-links">
-<a href="#about">About</a>
-<a href="#terms">Terms</a>
-</div>
-
+  <div class="logo">AI Generator</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#terms">Terms</a>
+  </div>
 </nav>
 
-<!-- MAIN -->
+<!-- ADSTERRA: Fixed Side Banner -->
+<div class="adsterra-side">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '91c45f4ad34f344e691aeb247ad415c8',
+      'format' : 'iframe',
+      'height' : 600,
+      'width' : 160,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://www.highperformanceformat.com/91c45f4ad34f344e691aeb247ad415c8/invoke.js"></script>
+</div>
 
 <div class="container">
 
-<div class="glass-box">
+  <div class="glass-box">
 
-<h1>AI Image Generator</h1>
+    <h1>AI Image Generator</h1>
 
-<p class="subtitle">
-Create cinematic AI images instantly for free
-</p>
+    <p class="subtitle">
+      Create cinematic AI images instantly for free
+    </p>
 
-<input
-type="text"
-id="prompt"
-placeholder="Enter your cinematic image prompt..."
-/>
+    <input
+      type="text"
+      id="prompt"
+      placeholder="Enter your cinematic image prompt..."
+    />
 
-<button onclick="generateImage()">
-Generate Image
-</button>
+    <button onclick="generateImage()">
+      Generate Image
+    </button>
 
-<!-- MONETAG AD AREA -->
+    <!-- ADSTERRA: Popunder/Direct Link -->
+    <div class="ad-box">
+      <script src="https://pl29546897.effectivecpmnetwork.com/e7/27/ed/e727edd1da301687a35e0d314dcf3caa.js" type="text/javascript"></script>
+    </div>
 
-<div class="ad-box">
+    <!-- MONETAG -->
+    <div class="ad-box">
+      <script src='//libtl.com/sdk.js'
+        data-zone='<meta name="monetag" content="7ac3658637cda6eb5f9b570809bc5802">'
+        data-sdk='show_970x250'>
+      </script>
+    </div>
 
-<script src='//libtl.com/sdk.js' data-zone='<meta name="monetag" content="7ac3658637cda6eb5f9b570809bc5802">' data-sdk='show_970x250'></script>
+    <div class="image-box">
+      <img id="image" alt="Generated AI Image"/>
+    </div>
+
+  </div>
+
+  <!-- ADSTERRA: Banner below main box -->
+  <div class="ad-box" style="width:95%; max-width:750px; margin-top:25px;">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '91c45f4ad34f344e691aeb247ad415c8',
+        'format' : 'iframe',
+        'height' : 600,
+        'width' : 160,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="https://www.highperformanceformat.com/91c45f4ad34f344e691aeb247ad415c8/invoke.js"></script>
+  </div>
 
 </div>
-
-<div class="image-box">
-<img id="image"/>
-</div>
-
-</div>
-
-</div>
-
-<!-- ABOUT -->
 
 <section id="about" style="padding:60px 20px; text-align:center;">
-
-<h2 style="font-size:35px; margin-bottom:20px;">
-About
-</h2>
-
-<p style="max-width:850px; margin:auto; color:#ccc; line-height:1.8; font-size:18px;">
-This AI Image Generator allows users to create stunning AI-generated images instantly using text prompts. 
-Simply type your idea and generate unique cinematic images for free.
-</p>
-
+  <h2 style="font-size:35px; margin-bottom:20px;">About</h2>
+  <p style="max-width:850px; margin:auto; color:#ccc; line-height:1.8; font-size:18px;">
+    This AI Image Generator allows users to create stunning AI-generated images instantly using text prompts.
+    Simply type your idea and generate unique cinematic images for free.
+  </p>
 </section>
-
-<!-- TERMS -->
 
 <section id="terms" style="padding:60px 20px; text-align:center;">
-
-<h2 style="font-size:35px; margin-bottom:20px;">
-Terms & Conditions
-</h2>
-
-<p style="max-width:850px; margin:auto; color:#ccc; line-height:1.8; font-size:18px;">
-By using this website, you agree not to generate harmful, illegal, or inappropriate content. 
-This service is provided for educational and creative purposes only.
-</p>
-
+  <h2 style="font-size:35px; margin-bottom:20px;">Terms &amp; Conditions</h2>
+  <p style="max-width:850px; margin:auto; color:#ccc; line-height:1.8; font-size:18px;">
+    By using this website, you agree not to generate harmful, illegal, or inappropriate content.
+    This service is provided for educational and creative purposes only.
+  </p>
 </section>
 
-<!-- FOOTER -->
-
 <footer>
-© 2026 AI Image Generator | All Rights Reserved
+  &copy; 2026 AI Image Generator | All Rights Reserved
 </footer>
 
 <script>
-
 function generateImage(){
-
-const prompt =
-document.getElementById("prompt").value;
-
-if(prompt.trim() === ""){
-alert("Please enter a prompt");
-return;
+  const prompt = document.getElementById("prompt").value;
+  if(prompt.trim() === ""){
+    alert("Please enter a prompt");
+    return;
+  }
+  const imageUrl = "https://image.pollinations.ai/prompt/" + encodeURIComponent(prompt);
+  const image = document.getElementById("image");
+  image.style.display = "block";
+  image.src = imageUrl;
 }
-
-const imageUrl =
-"https://image.pollinations.ai/prompt/" +
-encodeURIComponent(prompt);
-
-const image =
-document.getElementById("image");
-
-image.style.display = "block";
-
-image.src = imageUrl;
-
-}
-
 </script>
 
 </body>
